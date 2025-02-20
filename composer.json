@@ -1,17 +1,36 @@
 {
     "name": "lewenbraun/ollama-php-sdk",
-    "autoload": {
-        "psr-4": {
-            "Lewenbraun\\Ollama\\": "src/"
-        }
-    },
+    "description": "PHP SDK for interacting with the Ollama API, a service for running and deploying large language models.",
+    "license": "MIT",
+    "type": "library",
+    "keywords": [
+        "ollama",
+        "api",
+        "sdk",
+        "llm",
+        "ai",
+        "language model",
+        "machine learning"
+    ],
+    "homepage": "https://github.com/lewenbraun/ollama-php-sdk",
     "authors": [
         {
             "name": "Matvey Lewenbraun",
             "email": "matik861@gmail.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "Lewenbraun\\Ollama\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Lewenbraun\\Ollama\\Tests\\": "tests/"
+        }
+    },
     "require": {
+        "php": ">=8.1",
         "guzzlehttp/guzzle": "^7.0"
     },
     "require-dev": {
