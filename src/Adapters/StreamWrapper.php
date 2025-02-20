@@ -8,7 +8,7 @@ use Generator;
 use JsonException;
 use IteratorAggregate;
 use Psr\Http\Message\ResponseInterface;
-use Lewenbraun\Ollama\Responses\Exceptions\StreamWrapperException;
+use Lewenbraun\Ollama\Exceptions\StreamWrapperException;
 
 final class StreamWrapper implements IteratorAggregate
 {

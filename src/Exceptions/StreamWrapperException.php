@@ -1,6 +1,8 @@
 <?php
 
-namespace Lewenbraun\Ollama\Responses\Exceptions;
+declare(strict_types=1);
+
+namespace Lewenbraun\Ollama\Exceptions;
 
 use Exception;
 use Throwable;
