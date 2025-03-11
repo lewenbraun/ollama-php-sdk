@@ -17,10 +17,10 @@ class ModelShowResponse
      */
     private function __construct(
         public readonly string $modelfile,
-        public readonly string $parameters,
         public readonly string $template,
         public readonly ModelDetails $details,
         public readonly array $model_info,
+        public readonly ?string $parameters = null,
     ) {
     }
 
@@ -28,10 +28,10 @@ class ModelShowResponse
     {
         return new self(
             modelfile: $attributes['modelfile'],
-            parameters: $attributes['parameters'],
             template: $attributes['template'],
             details: ModelDetails::fromArray($attributes['details']),
             model_info: $attributes['model_info'],
+            parameters: $attributes['parameters'] ?? null,
         );
     }
 
