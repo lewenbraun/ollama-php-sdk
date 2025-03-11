@@ -15,24 +15,24 @@ class ModelDetails
      * @param string $quantizationLevel
      */
     private function __construct(
-        public readonly string $parentModel,
         public readonly string $format,
         public readonly string $family,
         public readonly array $families,
         public readonly string $parameterSize,
         public readonly string $quantizationLevel,
+        public readonly ?string $parentModel = null,
     ) {
     }
 
     public static function fromArray(array $attributes): ModelDetails
     {
         return new self(
-            parentModel: $attributes['parent_model'],
             format: $attributes['format'],
             family: $attributes['family'],
             families: $attributes['families'],
             parameterSize: $attributes['parameter_size'],
             quantizationLevel: $attributes['quantization_level'],
+            parentModel: $attributes['parent_model'] ?? null,
         );
     }
 
@@ -42,12 +42,12 @@ class ModelDetails
     public function toArray(): array
     {
         return [
-            'parent_model' => $this->parentModel,
             'format' => $this->format,
             'family' => $this->family,
             'families' => $this->families,
             'parameter_size' => $this->parameterSize,
             'quantization_level' => $this->quantizationLevel,
+            'parent_model' => $this->parentModel,
         ];
     }
 }

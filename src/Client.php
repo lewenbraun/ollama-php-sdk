@@ -85,7 +85,7 @@ class Client
      */
     private function getHandleResponse(string $httpMethod, ?object $request, ResponseInterface $clientResponse): ResponseInterface|int|array
     {
-        if ($request?->stream) {
+        if (isset($request->stream) && $request->stream) {
             return $clientResponse;
         }
 
@@ -142,7 +142,7 @@ class Client
      */
     private function post(string $endpoint, ?object $parameters): ResponseInterface
     {
-        $stream = $parameters->stream;
+        $stream = isset($parameters->stream) && $parameters->stream ? true : false;
 
         $options = [
             'json'   => $parameters->toArray(),
