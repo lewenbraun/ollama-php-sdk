@@ -16,7 +16,7 @@ class ModelPullRequest extends Request
     public function __construct(
         public readonly string $model,
         public readonly ?bool $insecure = null,
-        public readonly ?bool $stream = null
+        public readonly ?bool $stream = false,
     ) {
     }
 
@@ -25,7 +25,7 @@ class ModelPullRequest extends Request
         return new self(
             model: $data['model'],
             insecure: $data['insecure'] ?? null,
-            stream: $data['stream'] ?? null,
+            stream: $data['stream'] ?? false,
         );
     }
 }

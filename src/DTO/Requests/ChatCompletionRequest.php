@@ -15,7 +15,7 @@ class ChatCompletionRequest extends Request
      * @param array<mixed>|null $tools list of tools in JSON for the model to use if supported
      * @param string|null $format the format to return a response in. Format can be json or a JSON schema.
      * @param array<string, mixed>|null $options additional model parameters listed in the documentation for the Modelfile such as temperature
-     * @param bool $stream if false the response will be returned as a single response object, rather than a stream of objects
+     * @param bool|null $stream if false the response will be returned as a single response object, rather than a stream of objects
      * @param string|null $keepAlive controls how long the model will stay loaded into memory following the request (default: 5m)
      */
     public function __construct(
